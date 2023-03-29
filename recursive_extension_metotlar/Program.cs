@@ -22,6 +22,13 @@
                 Console.WriteLine(ifade.RemoveWiteSpaces());
             Console.WriteLine(ifade.MakeUpperCase());
             Console.WriteLine(ifade.MakeLowerCase());
+            int[] dizi = {9, 3, 6, 2, 1, 5, 0,};
+            dizi.ShortArray();
+            dizi.EkranaYazdir();
+
+            int sayi = 5;
+           Console.WriteLine(sayi.IsEvenNumber());
+           Console.WriteLine(ifade.GetFirstCharacter());
         }
     }
 
@@ -67,6 +74,30 @@
                 public static string MakeLowerCase( this string param)
                 {
                     return param.ToLower(); //hepsi küçük olur
+                }
+
+                public static int[] ShortArray(this int[] param)
+                {
+                    Array.Sort(param);
+                    return param;
+                }
+
+                public static void EkranaYazdir(this int[] param)
+                {
+                    foreach (var item  in param)
+                    {
+                        Console.WriteLine(item);
+                    }
+                }
+
+                public static bool IsEvenNumber(this int param)
+                {
+                    return param% 2 == 0;
+                }
+
+                public static string GetFirstCharacter(this string param)
+                {
+                    return param.Substring(0, 1);
                 }
             }
 
